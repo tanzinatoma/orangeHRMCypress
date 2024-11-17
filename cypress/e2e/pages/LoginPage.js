@@ -1,11 +1,15 @@
 export class LoginPage{
-    enterUsername(){
-        cy.get('[name="username"]').type("Admin");
+    username = '[name="username"]'
+    password = '[name="password"]'
+    login_button = '.oxd-button'
+
+    enterUsername(username){
+        cy.get(this.username).type(username);
     }
-    enterPassword(){
-        cy.get('[name="password"]').type("admin123");
+    enterPassword(password){
+        cy.get(this.password).type(password);
     }
     clickLogin(){
-        cy.get('#btnLogin').click();
+        cy.get(this.login_button).click();
     }
 }
